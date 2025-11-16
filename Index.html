@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Marca - TeamFeedback PRO</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 40px rgba(0,0,0,0.1);
+        }
+        
+        .cover {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .logo-container {
+            margin-bottom: 60px;
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 72px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        
+        .logo-subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+        
+        .cover h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cover p {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        .section {
+            padding: 80px 60px;
+        }
+        
+        .section-header {
+            margin-bottom: 50px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+        
+        .section-header h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: #7f8c8d;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .card p {
+            font-size: 16px;
+            color: #5a6c7d;
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .color-box {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .color-sample {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: 700;
+        }
+        
+        .color-info {
+            padding: 20px;
+            background: white;
+        }
+        
+        .color-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .color-info p {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin: 5px 0;
+        }
+        
+        .color-info .hex {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .typography-sample {
+            margin: 30px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .font-display {
+            margin-bottom: 40px;
+        }
+        
+        .font-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .font-showcase {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .font-weights {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .weight-sample {
+            font-size: 24px;
+        }
+        
+        .logo-variations {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .logo-variant {
+            padding: 50px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 250px;
+        }
+        
+        .logo-variant.dark {
+            background: #2c3e50;
+        }
+        
+        .logo-variant.light {
+            background: #ecf0f1;
+        }
+        
+        .logo-variant.gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .logo-sub {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+        
+        .usage-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .usage-box {
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .usage-box h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .usage-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .usage-box li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #5a6c7d;
+        }
+        
+        .usage-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .usage-box.dont li:before {
+            content: "✗";
+            color: #e74c3c;
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .icon-box {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .icon-symbol {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .icon-label {
+            font-size: 14px;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+        
+        .download-section {
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        
+        .download-section h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        @media print {
+            .page {
+                box-shadow: none;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- CAPA -->
+        <div class="cover">
+            <div class="logo-container">
+                <div class="logo">TeamFeedback</div>
+                <div class="logo-subtitle">PRO</div>
+            </div>
+            <h2>Manual de Identidade Visual</h2>
+            <p>Diretrizes para aplicação da marca do Sistema de Gestão de Feedbacks</p>
+        </div>
+        
+        <!-- CONCEITO DA MARCA -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Conceito da Marca</h2>
+                <p>A essência e os valores que definem a identidade TeamFeedback PRO</p>
+            </div>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3>🎯 Missão</h3>
+                    <p>Facilitar a comunicação corporativa através de feedbacks estruturados, promovendo desenvolvimento profissional contínuo e transparente.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>👁️ Visão</h3>
+                    <p>Ser a plataforma referência em gestão de feedbacks, reconhecida pela segurança, anonimato e efetividade na melhoria contínua.</p>
+                </div>
+            </div>
+            
+            <div class="grid-3" style="margin-top: 30px;">
+                <div class="card">
+                    <h3>🔒 Confiança</h3>
+                    <p>Garantia de anonimato e segurança em todas as interações</p>
+                </div>
+                
+                <div class="card">
+                    <h3>💡 Clareza</h3>
+                    <p>Interface intuitiva e comunicação transparente</p>
+                </div>
+                
+                <div class="card">
+                    <h3>🚀 Evolução</h3>
+                    <p>Foco no desenvolvimento e melhoria contínua</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- LOGO -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Logotipo</h2>
+                <p>Construção e aplicações da marca</p>
+            </div>
+            
+            <div style="text-align: center; margin: 60px 0;">
+                <div style="font-family: 'Poppins', sans-serif; font-size: 96px; font-weight: 800; color: #667eea; letter-spacing: -3px;">TeamFeedback</div>
+                <div style="font-size: 20px; letter-spacing: 6px; text-transform: uppercase; font-weight: 300; color: #7f8c8d; margin-top: 10px;">PRO</div>
+            </div>
+            
+            <div class="card">
+                <h3>Conceito do Logo</h3>
+                <p>O logotipo utiliza a tipografia Poppins em negrito (800) para transmitir força, confiança e modernidade. O nome "TeamFeedback" representa colaboração e comunicação em equipe, enquanto "PRO" em letras maiúsculas espaçadas comunica profissionalismo e excelência.</p>
+                <br>
+                <p><strong>Proporções:</strong> O texto "TeamFeedback" possui tamanho 4x maior que o subtítulo "PRO".</p>
+            </div>
+            
+            <div class="logo-variations">
+                <div class="logo-variant gradient">
+                    <div class="logo-text" style="color: white;">TeamFeedback</div>
+                    <div class="logo-sub" style="color: rgba(255,255,255,0.9);">PRO</div>
+                </div>
+                
+                <div class="logo-variant dark">
+                    <div class="logo-text" style="color: white;">TeamFeedback</div>
+                    <div class="logo-sub" style="color: rgba(255,255,255,0.7);">PRO</div>
+                </div>
+                
+                <div class="logo-variant light">
+                    <div class="logo-text" style="color: #667eea;">TeamFeedback</div>
+                    <div class="logo-sub" style="color: #7f8c8d;">PRO</div>
+                </div>
+                
+                <div class="logo-variant" style="background: white; border: 2px solid #e0e0e0;">
+                    <div class="logo-text" style="color: #2c3e50;">TeamFeedback</div>
+                    <div class="logo-sub" style="color: #7f8c8d;">PRO</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PALETA DE CORES -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Paleta de Cores</h2>
+                <p>Cores baseadas em psicologia cromática para confiança e comunicação</p>
+            </div>
+            
+            <div class="color-palette">
+                <div class="color-box">
+                    <div class="color-sample" style="background: #667eea;">
+                        1
+                    </div>
+                    <div class="color-info">
+                        <h4>Azul Primário</h4>
+                        <p class="hex">#667EEA</p>
+                        <p>RGB: 102, 126, 234</p>
+                        <p><strong>Uso:</strong> Cor principal, botões de ação, headers</p>
+                        <p><strong>Psicologia:</strong> Confiança, profissionalismo, comunicação</p>
+                    </div>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-sample" style="background: #764ba2;">
+                        2
+                    </div>
+                    <div class="color-info">
+                        <h4>Roxo Secundário</h4>
+                        <p class="hex">#764BA2</p>
+                        <p>RGB: 118, 75, 162</p>
+                        <p><strong>Uso:</strong> Gradientes, acentos, elementos secundários</p>
+                        <p><strong>Psicologia:</strong> Criatividade, sabedoria, inovação</p>
+                    </div>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-sample" style="background: #2c3e50;">
+                        3
+                    </div>
+                    <div class="color-info">
+                        <h4>Azul Escuro</h4>
+                        <p class="hex">#2C3E50</p>
+                        <p>RGB: 44, 62, 80</p>
+                        <p><strong>Uso:</strong> Textos principais, headers, elementos de destaque</p>
+                        <p><strong>Psicologia:</strong> Seriedade, estabilidade, autoridade</p>
+                    </div>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-sample" style="background: #27ae60; color: white;">
+                        ✓
+                    </div>
+                    <div class="color-info">
+                        <h4>Verde Sucesso</h4>
+                        <p class="hex">#27AE60</p>
+                        <p>RGB: 39, 174, 96</p>
+                        <p><strong>Uso:</strong> Status "Aprovado", mensagens de sucesso</p>
+                        <p><strong>Psicologia:</strong> Aprovação, crescimento, positivo</p>
+                    </div>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-sample" style="background: #f39c12;">
+                        ⏳
+                    </div>
+                    <div class="color-info">
+                        <h4>Laranja Pendente</h4>
+                        <p class="hex">#F39C12</p>
+                        <p>RGB: 243, 156, 18</p>
+                        <p><strong>Uso:</strong> Status "Pendente", alertas</p>
+                        <p><strong>Psicologia:</strong> Atenção, aguardo, processo</p>
+                    </div>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-sample" style="background: #e74c3c;">
+                        ✗
+                    </div>
+                    <div class="color-info">
+                        <h4>Vermelho Rejeição</h4>
+                        <p class="hex">#E74C3C</p>
+                        <p>RGB: 231, 76, 60</p>
+                        <p><strong>Uso:</strong> Status "Rejeitado", erros, cancelamento</p>
+                        <p><strong>Psicologia:</strong> Atenção, correção necessária</p>
+                    </div>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-sample" style="background: #ecf0f1; color: #2c3e50;">
+                        Aa
+                    </div>
+                    <div class="color-info">
+                        <h4>Cinza Claro</h4>
+                        <p class="hex">#ECF0F1</p>
+                        <p>RGB: 236, 240, 241</p>
+                        <p><strong>Uso:</strong> Backgrounds, cards, áreas secundárias</p>
+                        <p><strong>Psicologia:</strong> Neutralidade, clareza, espaço</p>
+                    </div>
+                </div>
+                
+                <div class="color-box">
+                    <div class="color-sample" style="background: #7f8c8d;">
+                        Aa
+                    </div>
+                    <div class="color-info">
+                        <h4>Cinza Médio</h4>
+                        <p class="hex">#7F8C8D</p>
+                        <p>RGB: 127, 140, 141</p>
+                        <p><strong>Uso:</strong> Textos secundários, labels, placeholders</p>
+                        <p><strong>Psicologia:</strong> Sutileza, informação secundária</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- TIPOGRAFIA -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Tipografia</h2>
+                <p>Famílias tipográficas e hierarquia de uso</p>
+            </div>
+            
+            <div class="typography-sample">
+                <div class="font-display">
+                    <div class="font-name">Poppins - Família Display</div>
+                    <div class="font-showcase" style="font-family: 'Poppins', sans-serif;">
+                        TeamFeedback PRO
+                    </div>
+                    <div class="font-weights">
+                        <div class="weight-sample" style="font-family: 'Poppins', sans-serif; font-weight: 800;">
+                            ExtraBold (800) - Logo e títulos principais
+                        </div>
+                        <div class="weight-sample" style="font-family: 'Poppins', sans-serif; font-weight: 700;">
+                            Bold (700) - Títulos de seções
+                        </div>
+                        <div class="weight-sample" style="font-family: 'Poppins', sans-serif; font-weight: 600;">
+                            SemiBold (600) - Subtítulos e destaques
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px; color: #7f8c8d;"><strong>Uso:</strong> Logo, títulos principais, headers de páginas e seções importantes.</p>
+                </div>
+                
+                <div class="font-display" style="margin-top: 60px;">
+                    <div class="font-name">Inter - Família de Interface</div>
+                    <div class="font-showcase" style="font-family: 'Inter', sans-serif; font-size: 36px;">
+                        Feedback enviado com sucesso
+                    </div>
+                    <div class="font-weights">
+                        <div class="weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 20px;">
+                            Bold (700) - Botões e CTAs importantes
+                        </div>
+                        <div class="weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 20px;">
+                            SemiBold (600) - Labels e títulos de cards
+                        </div>
+                        <div class="weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px;">
+                            Medium (500) - Botões secundários
+                        </div>
+                        <div class="weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px;">
+                            Regular (400) - Corpo de texto e parágrafos
+                        </div>
+                        <div class="weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 300; font-size: 20px;">
+                            Light (300) - Textos secundários e descrições
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px; color: #7f8c8d;"><strong>Uso:</strong> Todo o corpo do sistema, formulários, botões, textos explicativos e interface geral.</p>
+                </div>
+            </div>
+            
+            <div class="card" style="margin-top: 40px;">
+                <h3>Hierarquia Tipográfica</h3>
+                <p><strong>H1:</strong> Poppins Bold 48px - Títulos de páginas principais</p>
+                <p><strong>H2:</strong> Poppins SemiBold 36px - Títulos de seções</p>
+                <p><strong>H3:</strong> Inter SemiBold 24px - Subtítulos e cards</p>
+                <p><strong>Body:</strong> Inter Regular 16px - Texto padrão (line-height: 1.6)</p>
+                <p><strong>Small:</strong> Inter Regular 14px - Textos secundários</p>
+                <p><strong>Buttons:</strong> Inter SemiBold 16px - Textos de botões</p>
+            </div>
+        </div>
+        
+        <!-- ELEMENTOS VISUAIS -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Elementos Visuais</h2>
+                <p>Ícones e componentes da interface</p>
+            </div>
+            
+            <div class="icon-grid">
+                <div class="icon-box">
+                    <div class="icon-symbol">📝</div>
+                    <div class="icon-label">Dar Feedback</div>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-symbol">📥</div>
+                    <div class="icon-label">Recebidos</div>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-symbol">📤</div>
+                    <div class="icon-label">Enviados</div>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-symbol">✓</div>
+                    <div class="icon-label">Aprovado</div>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-symbol">⏳</div>
+                    <div class="icon-label">Pendente</div>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-symbol">✗</div>
+                    <div class="icon-label">Rejeitado</div>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-symbol">👤</div>
+                    <div class="icon-label">Usuário</div>
+                </div>
+                
+                <div class="icon-box">
+                    <div class="icon-symbol">🔒</div>
+                    <div class="icon-label">Anônimo</div>
+                </div>
+            </div>
+            
+            <div class="card" style="margin-top: 40px;">
+                <h3>Estilo de Componentes</h3>
+                <p><strong>Botões Primários:</strong> Background #667eea, texto branco, border-radius 8px, padding 12px 24px</p>
+                <p><strong>Botões Secundários:</strong> Background transparente, borda #667eea, texto #667eea</p>
+                <p><strong>Cards:</strong> Background branco, border-radius 12px, shadow suave, borda esquerda 4px #667eea</p>
+                <p><strong>Inputs:</strong> Border #e0e0e0, focus border #667eea, border-radius 6px</p>
+                <p><strong>Status Tags:</strong> Border-radius 20px, padding 6px 16px, cores conforme status</p>
+            </div>
+        </div>
+        
+        <!-- APLICAÇÕES -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Diretrizes de Uso</h2>
+                <p>Como aplicar corretamente a identidade visual</p>
+            </div>
+            
+            <div class="usage-grid">
+                <div class="usage-box">
+                    <h4 style="color: #27ae60;">✓ Faça</h4>
+                    <ul>
+                        <li>Use o logo em fundos claros ou gradiente oficial</li>
+                        <li>Mantenha proporções originais do logo</li>
+                        <li>Use cores da paleta oficial</li>
+                        <li>Mantenha espaçamento mínimo ao redor do logo</li>
+                        <li>Use tipografias especificadas</li>
+                        <li>Aplique status colors corretamente</li>
+                    </ul>
+                </div>
+                
+                <div class="usage-box dont">
+                    <h4 style="color: #e74c3c;">✗ Não Faça</h4>
+                    <ul>
+                        <li>Alterar proporções ou distorcer o logo</li>
+                        <li>Usar cores fora da paleta oficial</li>
+                        <li>Aplicar efeitos não autorizados</li>
+                        <li>Mudar tipografia do logo</li>
+                        <li>Usar logo em fundos com baixo contraste</li>
+                        <li>Comprimir ou cortar elementos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card" style="margin-top: 40px;">
+                <h3>Área de Proteção</h3>
+                <p>O logo deve ter um espaçamento mínimo equivalente à altura da letra "G" em todas as direções. Isso garante que nenhum elemento visual interfira na legibilidade da marca.</p>
+            </div>
+            
+            <div class="card" style="margin-top: 20px;">
+                <h3>Tamanho Mínimo</h3>
+                <p><strong>Digital:</strong> 120px de largura mínima</p>
+                <p><strong>Impresso:</strong> 30mm de largura mínima</p>
+            </div>
+        </div>
+        
+        <!-- DOWNLOAD -->
+        <div class="section">
+            <div class="download-section">
+                <h3>Material Completo</h3>
+                <p>
